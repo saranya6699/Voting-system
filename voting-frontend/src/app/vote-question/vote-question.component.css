@@ -1,0 +1,9 @@
+.back {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+.no-data {
+    margin: 2rem;
+    font-size: 18px;
+}

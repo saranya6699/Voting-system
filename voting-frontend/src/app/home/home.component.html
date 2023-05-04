@@ -1,0 +1,7 @@
+<div class="container">
+    <h1>Choose one of the following options</h1>
+    <mat-list>
+        <mat-list-item *ngFor="let item of items" role="listitem"
+            (click)="router.navigate([item.url])">{{item.text}}</mat-list-item>
+    </mat-list>
+</div>

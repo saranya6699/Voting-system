@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 5rem;
+}
+mat-list-item:hover {
+    background-color: lightblue;
+}

@@ -1,0 +1,24 @@
+<div class="back">
+    <span style="cursor: pointer;" (click)="router.navigate(['home'])" class='material-icons'>arrow_back</span>
+    <span>Go Back</span>
+</div>
+
+<h1 style="margin: 1rem;" >Results</h1>
+<ng-container *ngIf="results$|async as results">
+    <mat-list *ngFor="let result of results">
+        <mat-list-item class="question">
+            <div matListItemLine class="text">{{result.text}}</div>
+            <div matListItemLine class="yes" [style.backgroundColor]="getColor(result, 'Yes')" [style.width.%]="getWidth(result, 'Yes') ? getWidth(result, 'Yes'): 100">
+            <span style="width: 70%;">Yes</span>
+            <span>Count: {{getWidth(result, 'Yes')}}%</span>
+            </div>
+            <div matListItemLine class="no" [style.backgroundColor]="getColor(result, 'No')"
+                [style.width.%]="getWidth(result, 'No') ? getWidth(result, 'No'): 100">
+                <span style="width: 70%;">No</span>
+                <span>Count: {{getWidth(result, 'No')}}%</span>
+            </div>
+            <div class="total" matListItemLine>Total Votes: {{result.count}}</div>
+        </mat-list-item>
+
+    </mat-list>
+</ng-container>

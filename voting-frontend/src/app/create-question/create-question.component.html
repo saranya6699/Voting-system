@@ -1,0 +1,17 @@
+<!-- <button mat-icon-button color="primary" (click)="router.navigate(['home'])">
+        <mat-icon>home</mat-icon>
+      </button> -->
+<div class="back">
+    <span style="cursor: pointer;" (click)="router.navigate(['home'])" class='material-icons'>arrow_back</span>
+    <span>Go Back</span>
+</div>
+<div class="container">
+    <h1>Create a question</h1>
+    <form class="form">
+        <mat-form-field>
+            <mat-label>Question</mat-label>
+            <input maxlength="200" required matInput [(ngModel)]="question" name="question">
+        </mat-form-field>
+        <button mat-button [disabled]="!question" (click)="submit()">Save</button>
+    </form>
+</div>

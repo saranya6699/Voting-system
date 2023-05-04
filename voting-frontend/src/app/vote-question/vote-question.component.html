@@ -1,0 +1,25 @@
+<div class="back">
+    <span style="cursor: pointer;" (click)="router.navigate(['home'])" class='material-icons'>arrow_back</span>
+    <span>Go Back</span>
+</div>
+<ng-container *ngIf="(questions$ | async) as questions;">
+    <ng-container *ngIf="questions.length; else noData">
+        <mat-list *ngFor="let question of questions">
+            <mat-list-item>
+                {{question.text}}
+                <button mat-icon-button (click)="vote(question, 1)" matListItemMeta>
+                    <mat-icon>check</mat-icon>
+                    <span>Yes</span>
+                </button>
+                <button mat-icon-button (click)="vote(question, 0)" matListItemMeta>
+                    <mat-icon>cancel</mat-icon>
+                    <span>No</span>
+                </button>
+            </mat-list-item>
+        </mat-list>
+    </ng-container>
+   
+</ng-container>
+<ng-template #noData>
+    <div class="no-data">No questions to vote</div>
+</ng-template>

@@ -1,0 +1,8 @@
+.header {
+    display: flex;
+    justify-content: end;
+}
+.logout {
+    display: flex;
+    margin: 1rem;
+}

@@ -1,0 +1,8 @@
+<div class="header" *ngIf="isLoggedIn()">
+    <div class="logout" style="cursor: pointer;" (click)="logout()">
+        <mat-icon>power_settings_new</mat-icon>
+        <div class="text">Logout</div>
+    </div>
+
+</div>
+<router-outlet></router-outlet>
